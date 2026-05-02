@@ -30,13 +30,8 @@ export default grammar({
   word: $ => $.identifier,
 
   conflicts: $ => [
-    [$._statement, $._expression],
-    [$.return_statement],
     [$._expression, $.object_literal],
-    [$._expression, $.lambda_expression],
-    [$.identifier, $.object_literal],
-    [$._expression, $.struct_definition],
-    [$.await_expression, $.object_literal],
+    [$._type_identifier, $.object_literal],
   ],
 
   rules: {
@@ -265,7 +260,7 @@ export default grammar({
       ']'
     )),
 
-    object_literal: $ => prec(PREC.call - 2, seq(
+    object_literal: $ => prec(PREC.assignment - 1, seq(
       optional(field('type', $.identifier)),
       '{',
       commaSep($.object_property),

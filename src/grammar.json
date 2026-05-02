@@ -1853,7 +1853,7 @@
     },
     "object_literal": {
       "type": "PREC",
-      "value": 11,
+      "value": 0,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2254,30 +2254,11 @@
   ],
   "conflicts": [
     [
-      "_statement",
-      "_expression"
-    ],
-    [
-      "return_statement"
-    ],
-    [
       "_expression",
       "object_literal"
     ],
     [
-      "_expression",
-      "lambda_expression"
-    ],
-    [
-      "identifier",
-      "object_literal"
-    ],
-    [
-      "_expression",
-      "struct_definition"
-    ],
-    [
-      "await_expression",
+      "_type_identifier",
       "object_literal"
     ]
   ],
