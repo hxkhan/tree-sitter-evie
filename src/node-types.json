@@ -693,6 +693,11 @@
     "fields": {}
   },
   {
+    "type": "break_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "call_expression",
     "named": true,
     "fields": {
@@ -1021,6 +1026,11 @@
   },
   {
     "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "continue_statement",
     "named": true,
     "fields": {}
   },
@@ -2021,6 +2031,11 @@
     }
   },
   {
+    "type": "nil",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "object_literal",
     "named": true,
     "fields": {
@@ -2139,6 +2154,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "operator",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "optional_check",
@@ -3278,8 +3298,8 @@
     "named": false
   },
   {
-    "type": "break_statement",
-    "named": true
+    "type": "break",
+    "named": false
   },
   {
     "type": "case",
@@ -3290,8 +3310,8 @@
     "named": false
   },
   {
-    "type": "continue_statement",
-    "named": true
+    "type": "continue",
+    "named": false
   },
   {
     "type": "echo",
@@ -3334,15 +3354,15 @@
     "named": false
   },
   {
+    "type": "is",
+    "named": false
+  },
+  {
     "type": "nil",
-    "named": true
+    "named": false
   },
   {
     "type": "number",
-    "named": true
-  },
-  {
-    "type": "operator",
     "named": true
   },
   {

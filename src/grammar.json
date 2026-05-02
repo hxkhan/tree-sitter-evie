@@ -31,8 +31,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "package"
+          "type": "SYMBOL",
+          "name": "_keyword_package"
         },
         {
           "type": "FIELD",
@@ -60,8 +60,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "imports"
+          "type": "SYMBOL",
+          "name": "_keyword_imports"
         },
         {
           "type": "STRING",
@@ -208,8 +208,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "fn"
+          "type": "SYMBOL",
+          "name": "_keyword_fn"
         },
         {
           "type": "FIELD",
@@ -259,8 +259,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "fn"
+          "type": "SYMBOL",
+          "name": "_keyword_fn"
         },
         {
           "type": "SYMBOL",
@@ -363,8 +363,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "var"
+              "type": "SYMBOL",
+              "name": "_keyword_var"
             },
             {
               "type": "FIELD",
@@ -493,8 +493,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "if"
+            "type": "SYMBOL",
+            "name": "_keyword_if"
           },
           {
             "type": "FIELD",
@@ -531,8 +531,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "else"
+          "type": "SYMBOL",
+          "name": "_keyword_else"
         },
         {
           "type": "CHOICE",
@@ -556,8 +556,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "while"
+            "type": "SYMBOL",
+            "name": "_keyword_while"
           },
           {
             "type": "FIELD",
@@ -585,8 +585,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "for"
+            "type": "SYMBOL",
+            "name": "_keyword_for"
           },
           {
             "type": "FIELD",
@@ -656,8 +656,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "return"
+            "type": "SYMBOL",
+            "name": "_keyword_return"
           },
           {
             "type": "CHOICE",
@@ -675,19 +675,19 @@
       }
     },
     "break_statement": {
-      "type": "STRING",
-      "value": "break"
+      "type": "SYMBOL",
+      "name": "_keyword_break"
     },
     "continue_statement": {
-      "type": "STRING",
-      "value": "continue"
+      "type": "SYMBOL",
+      "name": "_keyword_continue"
     },
     "echo_statement": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "echo"
+          "type": "SYMBOL",
+          "name": "_keyword_echo"
         },
         {
           "type": "SYMBOL",
@@ -699,8 +699,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "throw"
+          "type": "SYMBOL",
+          "name": "_keyword_throw"
         },
         {
           "type": "SYMBOL",
@@ -712,8 +712,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "switch"
+          "type": "SYMBOL",
+          "name": "_keyword_switch"
         },
         {
           "type": "CHOICE",
@@ -769,8 +769,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "case"
+          "type": "SYMBOL",
+          "name": "_keyword_case"
         },
         {
           "type": "FIELD",
@@ -797,8 +797,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "struct"
+          "type": "SYMBOL",
+          "name": "_keyword_struct"
         },
         {
           "type": "FIELD",
@@ -938,19 +938,19 @@
       ]
     },
     "nil": {
-      "type": "STRING",
-      "value": "nil"
+      "type": "SYMBOL",
+      "name": "_keyword_nil"
     },
     "boolean": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "true"
+          "type": "SYMBOL",
+          "name": "_keyword_true"
         },
         {
-          "type": "STRING",
-          "value": "false"
+          "type": "SYMBOL",
+          "name": "_keyword_false"
         }
       ]
     },
@@ -1339,8 +1339,8 @@
                 "content": {
                   "type": "ALIAS",
                   "content": {
-                    "type": "STRING",
-                    "value": "is"
+                    "type": "SYMBOL",
+                    "name": "_keyword_is"
                   },
                   "named": true,
                   "value": "operator"
@@ -2019,8 +2019,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "await"
+            "type": "SYMBOL",
+            "name": "_keyword_await"
           },
           {
             "type": "CHOICE",
@@ -2069,8 +2069,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "catch"
+            "type": "SYMBOL",
+            "name": "_keyword_catch"
           },
           {
             "type": "SYMBOL",
@@ -2086,8 +2086,8 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "STRING",
-            "value": "go"
+            "type": "SYMBOL",
+            "name": "_keyword_go"
           },
           {
             "type": "SYMBOL",
@@ -2095,6 +2095,98 @@
           }
         ]
       }
+    },
+    "_keyword_package": {
+      "type": "STRING",
+      "value": "package"
+    },
+    "_keyword_imports": {
+      "type": "STRING",
+      "value": "imports"
+    },
+    "_keyword_fn": {
+      "type": "STRING",
+      "value": "fn"
+    },
+    "_keyword_var": {
+      "type": "STRING",
+      "value": "var"
+    },
+    "_keyword_if": {
+      "type": "STRING",
+      "value": "if"
+    },
+    "_keyword_else": {
+      "type": "STRING",
+      "value": "else"
+    },
+    "_keyword_while": {
+      "type": "STRING",
+      "value": "while"
+    },
+    "_keyword_for": {
+      "type": "STRING",
+      "value": "for"
+    },
+    "_keyword_return": {
+      "type": "STRING",
+      "value": "return"
+    },
+    "_keyword_break": {
+      "type": "STRING",
+      "value": "break"
+    },
+    "_keyword_continue": {
+      "type": "STRING",
+      "value": "continue"
+    },
+    "_keyword_echo": {
+      "type": "STRING",
+      "value": "echo"
+    },
+    "_keyword_throw": {
+      "type": "STRING",
+      "value": "throw"
+    },
+    "_keyword_switch": {
+      "type": "STRING",
+      "value": "switch"
+    },
+    "_keyword_case": {
+      "type": "STRING",
+      "value": "case"
+    },
+    "_keyword_struct": {
+      "type": "STRING",
+      "value": "struct"
+    },
+    "_keyword_nil": {
+      "type": "STRING",
+      "value": "nil"
+    },
+    "_keyword_true": {
+      "type": "STRING",
+      "value": "true"
+    },
+    "_keyword_false": {
+      "type": "STRING",
+      "value": "false"
+    },
+    "_keyword_is": {
+      "type": "STRING",
+      "value": "is"
+    },
+    "_keyword_await": {
+      "type": "STRING",
+      "value": "await"
+    },
+    "_keyword_catch": {
+      "type": "STRING",
+      "value": "catch"
+    },
+    "_keyword_go": {
+      "type": "STRING",
+      "value": "go"
     },
     "identifier": {
       "type": "PATTERN",

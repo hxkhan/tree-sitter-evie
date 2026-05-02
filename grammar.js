@@ -41,13 +41,13 @@ export default grammar({
     ),
 
     package_clause: $ => seq(
-      'package',
+      $._keyword_package,
       field('name', $.identifier),
       optional($.import_clause)
     ),
 
     import_clause: $ => seq(
-      'imports',
+      $._keyword_imports,
       '(',
       commaSep($.string),
       ')'
@@ -75,7 +75,7 @@ export default grammar({
 
     // --- Functions ---
     function_declaration: $ => seq(
-      'fn',
+      $._keyword_fn,
       field('name', $.identifier),
       $.parameter_list,
       choice(
@@ -85,7 +85,7 @@ export default grammar({
     ),
 
     lambda_expression: $ => seq(
-      'fn',
+      $._keyword_fn,
       $.parameter_list,
       choice(
         field('body', $.block),
@@ -97,7 +97,7 @@ export default grammar({
 
     // --- Variables & Assignments ---
     variable_declaration: $ => choice(
-      seq('var', field('name', $.identifier), optional(seq(':=', field('value', $._expression)))),
+      seq($._keyword_var, field('name', $.identifier), optional(seq(':=', field('value', $._expression)))),
       seq(field('left', $._expression), ':=', field('value', $._expression))
     ),
 
@@ -109,25 +109,25 @@ export default grammar({
 
     // --- Control Flow ---
     if_statement: $ => prec.left(20, seq(
-      'if',
+      $._keyword_if,
       field('condition', $._expression),
       field('consequence', $.block),
       optional($.else_clause)
     )),
 
     else_clause: $ => seq(
-      'else',
+      $._keyword_else,
       choice($.block, $.if_statement)
     ),
 
     while_statement: $ => prec.left(20, seq(
-      'while',
+      $._keyword_while,
       field('condition', $._expression),
       field('body', $.block)
     )),
 
     for_statement: $ => prec.left(20, seq(
-      'for',
+      $._keyword_for,
       field('left', $.for_iterator),
       ':=',
       field('right', $._expression),
@@ -140,14 +140,14 @@ export default grammar({
       $.parenthesized_expression
     ),
 
-    return_statement: $ => prec.left(20, seq('return', optional($._expression))),
-    break_statement: $ => 'break',
-    continue_statement: $ => 'continue',
-    echo_statement: $ => seq('echo', $._expression),
-    throw_statement: $ => seq('throw', $._expression),
+    return_statement: $ => prec.left(20, seq($._keyword_return, optional($._expression))),
+    break_statement: $ => $._keyword_break,
+    continue_statement: $ => $._keyword_continue,
+    echo_statement: $ => seq($._keyword_echo, $._expression),
+    throw_statement: $ => seq($._keyword_throw, $._expression),
 
     switch_statement: $ => seq(
-      'switch',
+      $._keyword_switch,
       optional(seq(field('name', $.identifier), ':=')),
       field('value', $._expression),
       '{',
@@ -156,7 +156,7 @@ export default grammar({
     ),
 
     case_clause: $ => seq(
-      'case',
+      $._keyword_case,
       field('value', $._expression),
       ':',
       repeat($._statement)
@@ -164,7 +164,7 @@ export default grammar({
 
     // --- Types ---
     struct_definition: $ => seq(
-      'struct',
+      $._keyword_struct,
       field('name', $.identifier),
       $.parameter_list,
       optional(seq(':', field('parent', $._type_identifier))),
@@ -198,8 +198,8 @@ export default grammar({
       $.go_expression,
     ),
 
-    nil: $ => 'nil',
-    boolean: $ => choice('true', 'false'),
+    nil: $ => $._keyword_nil,
+    boolean: $ => choice($._keyword_true, $._keyword_false),
 
     parenthesized_expression: $ => seq('(', commaSep($._expression), ')'),
 
@@ -213,7 +213,7 @@ export default grammar({
         [PREC.relational, '<='],
         [PREC.relational, '>'],
         [PREC.relational, '>='],
-        [PREC.relational, 'is'],
+        [PREC.relational, $._keyword_is],
         [PREC.shift, '<<'],
         [PREC.shift, '>>'],
         [PREC.additive, '+'],
@@ -280,7 +280,7 @@ export default grammar({
     ),
 
     await_expression: $ => prec.left(PREC.unary, seq(
-      'await',
+      $._keyword_await,
       optional(choice(
         seq('{', repeat($.case_clause), '}'),
         $._expression
@@ -288,14 +288,39 @@ export default grammar({
     )),
 
     catch_expression: $ => prec.left(PREC.unary, seq(
-      'catch',
+      $._keyword_catch,
       $._expression
     )),
 
     go_expression: $ => prec.left(PREC.unary, seq(
-      'go',
+      $._keyword_go,
       $._expression
     )),
+
+    // --- Keywords ---
+    _keyword_package: $ => 'package',
+    _keyword_imports: $ => 'imports',
+    _keyword_fn: $ => 'fn',
+    _keyword_var: $ => 'var',
+    _keyword_if: $ => 'if',
+    _keyword_else: $ => 'else',
+    _keyword_while: $ => 'while',
+    _keyword_for: $ => 'for',
+    _keyword_return: $ => 'return',
+    _keyword_break: $ => 'break',
+    _keyword_continue: $ => 'continue',
+    _keyword_echo: $ => 'echo',
+    _keyword_throw: $ => 'throw',
+    _keyword_switch: $ => 'switch',
+    _keyword_case: $ => 'case',
+    _keyword_struct: $ => 'struct',
+    _keyword_nil: $ => 'nil',
+    _keyword_true: $ => 'true',
+    _keyword_false: $ => 'false',
+    _keyword_is: $ => 'is',
+    _keyword_await: $ => 'await',
+    _keyword_catch: $ => 'catch',
+    _keyword_go: $ => 'go',
 
     // --- Literals & Basic types ---
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
