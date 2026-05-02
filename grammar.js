@@ -34,9 +34,8 @@ export default grammar({
     variable_declaration: $ => seq(
       'var',
       field('name', $.identifier),
-      '=',
-      field('value', $._expression),
-      optional(';')
+      ':=',
+      field('value', $._expression)
     ),
 
     // --- Expressions ---
@@ -132,4 +131,3 @@ export default grammar({
     ),
   }
 });
-

@@ -2,7 +2,7 @@
 Variable Declaration
 ==================
 
-var x = 42
+var x := 42
 
 ---
 
@@ -16,7 +16,7 @@ Function Definition
 ==================
 
 fn main() {
-  var x = 1
+  var x := 1
   x + 1
 }
 

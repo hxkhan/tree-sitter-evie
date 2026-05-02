@@ -97,7 +97,7 @@
         },
         {
           "type": "STRING",
-          "value": "="
+          "value": ":="
         },
         {
           "type": "FIELD",
@@ -106,18 +106,6 @@
             "type": "SYMBOL",
             "name": "_expression"
           }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ";"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
         }
       ]
     },
