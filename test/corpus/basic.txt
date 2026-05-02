@@ -23,7 +23,7 @@ fn main() {
 ---
 
 (source_file
-  (function_definition
+  (function_declaration
     name: (identifier)
     (parameter_list)
     body: (block
