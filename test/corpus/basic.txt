@@ -1,0 +1,51 @@
+==================
+Variable Declaration
+==================
+
+var x = 42
+
+---
+
+(source_file
+  (variable_declaration
+    name: (identifier)
+    value: (number)))
+
+==================
+Function Definition
+==================
+
+fn main() {
+  var x = 1
+  x + 1
+}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    (parameter_list)
+    body: (block
+      (variable_declaration
+        name: (identifier)
+        value: (number))
+      (expression_statement
+        (binary_expression
+          left: (identifier)
+          operator: (operator)
+          right: (number))))))
+
+==================
+Template Literal
+==================
+
+`hello {name}`
+
+---
+
+(source_file
+  (expression_statement
+    (template_literal
+      (template_expression
+        (identifier)))))
