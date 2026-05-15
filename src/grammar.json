@@ -856,11 +856,36 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "primitive_type"
+        },
+        {
+          "type": "SYMBOL",
           "name": "identifier"
         },
         {
           "type": "SYMBOL",
           "name": "member_expression"
+        }
+      ]
+    },
+    "primitive_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_type_int"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type_float"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type_str"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type_bool"
         }
       ]
     },
@@ -2099,6 +2124,22 @@
           }
         ]
       }
+    },
+    "_type_int": {
+      "type": "STRING",
+      "value": "int"
+    },
+    "_type_float": {
+      "type": "STRING",
+      "value": "float"
+    },
+    "_type_str": {
+      "type": "STRING",
+      "value": "str"
+    },
+    "_type_bool": {
+      "type": "STRING",
+      "value": "bool"
     },
     "_keyword_package": {
       "type": "STRING",

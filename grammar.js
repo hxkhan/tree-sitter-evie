@@ -176,8 +176,16 @@ export default grammar({
     ),
 
     _type_identifier: $ => choice(
+      $.primitive_type,
       $.identifier,
       $.member_expression
+    ),
+
+    primitive_type: $ => choice(
+      $._type_int,
+      $._type_float,
+      $._type_str,
+      $._type_bool
     ),
 
     // --- Expressions ---
@@ -300,6 +308,12 @@ export default grammar({
       $._keyword_go,
       $._expression
     )),
+
+    // --- Type Keywords ---
+    _type_int: $ => 'int',
+    _type_float: $ => 'float',
+    _type_str: $ => 'str',
+    _type_bool: $ => 'bool',
 
     // --- Keywords ---
     _keyword_package: $ => 'package',
