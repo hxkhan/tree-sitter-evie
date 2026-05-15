@@ -32,6 +32,7 @@ export default grammar({
   conflicts: $ => [
     [$._expression, $.object_literal],
     [$._type_identifier, $.object_literal],
+    [$._expression, $._type_identifier],
   ],
 
   rules: {
@@ -96,9 +97,12 @@ export default grammar({
     parameter_list: $ => seq('(', commaSep($.identifier), ')'),
 
     // --- Variables & Assignments ---
-    variable_declaration: $ => choice(
-      seq($._keyword_var, field('name', $.identifier), optional(seq(':=', field('value', $._expression)))),
-      seq(field('left', $._expression), ':=', field('value', $._expression))
+    variable_declaration: $ => seq(
+      // Handles: var x = 100, let y: int = 100, etc.
+      choice($._keyword_var, $._keyword_let),
+      field('name', $.identifier),
+      optional(seq(':', field('type', $._type_identifier))),
+      optional(seq('=', field('value', $._expression)))
     ),
 
     assignment_statement: $ => prec.left(PREC.assignment, seq(
@@ -302,6 +306,7 @@ export default grammar({
     _keyword_imports: $ => 'imports',
     _keyword_fn: $ => 'fn',
     _keyword_var: $ => 'var',
+    _keyword_let: $ => 'let',
     _keyword_if: $ => 'if',
     _keyword_else: $ => 'else',
     _keyword_while: $ => 'while',
