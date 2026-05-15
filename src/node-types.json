@@ -68,6 +68,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -151,6 +155,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -231,6 +239,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -342,6 +354,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -362,7 +378,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
@@ -371,6 +387,10 @@
         },
         {
           "type": "await_expression",
+          "named": true
+        },
+        {
+          "type": "await_select_block",
           "named": true
         },
         {
@@ -383,10 +403,6 @@
         },
         {
           "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "case_clause",
           "named": true
         },
         {
@@ -430,6 +446,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -439,6 +459,21 @@
         },
         {
           "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "await_select_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case_clause",
           "named": true
         }
       ]
@@ -510,6 +545,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -598,6 +637,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -776,6 +819,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -857,6 +904,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -1010,6 +1061,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1033,6 +1088,77 @@
     "type": "continue_statement",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "default_clause",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment_statement",
+          "named": true
+        },
+        {
+          "type": "break_statement",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "echo_statement",
+          "named": true
+        },
+        {
+          "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "for_statement",
+          "named": true
+        },
+        {
+          "type": "function_declaration",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "struct_definition",
+          "named": true
+        },
+        {
+          "type": "switch_statement",
+          "named": true
+        },
+        {
+          "type": "throw_statement",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "echo_statement",
@@ -1100,6 +1226,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "postfix_expression",
           "named": true
         },
         {
@@ -1205,6 +1335,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1229,10 +1363,6 @@
       "types": [
         {
           "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
           "named": true
         }
       ]
@@ -1327,6 +1457,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1412,6 +1546,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -1519,6 +1657,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -1599,6 +1741,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -1721,6 +1867,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1796,6 +1946,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -1884,6 +2038,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -1978,6 +2136,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -2140,6 +2302,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2222,8 +2388,8 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
           "type": "array_literal",
@@ -2286,6 +2452,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -2301,9 +2471,106 @@
     }
   },
   {
-    "type": "primitive_type",
+    "type": "postfix_expression",
     "named": true,
-    "fields": {}
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_literal",
+            "named": true
+          },
+          {
+            "type": "await_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "catch_expression",
+            "named": true
+          },
+          {
+            "type": "go_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "lambda_expression",
+            "named": true
+          },
+          {
+            "type": "member_expression",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "object_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "template_literal",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "++",
+            "named": false
+          },
+          {
+            "type": "--",
+            "named": false
+          }
+        ]
+      }
+    }
   },
   {
     "type": "return_statement",
@@ -2371,6 +2638,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "postfix_expression",
           "named": true
         },
         {
@@ -2510,14 +2781,6 @@
           {
             "type": "identifier",
             "named": true
-          },
-          {
-            "type": "member_expression",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
           }
         ]
       }
@@ -2527,7 +2790,48 @@
       "required": true,
       "types": [
         {
-          "type": "parameter_list",
+          "type": "struct_field_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "struct_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "struct_field_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "struct_field",
           "named": true
         }
       ]
@@ -2612,6 +2916,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2632,6 +2940,10 @@
       "types": [
         {
           "type": "case_clause",
+          "named": true
+        },
+        {
+          "type": "default_clause",
           "named": true
         }
       ]
@@ -2703,6 +3015,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "postfix_expression",
           "named": true
         },
         {
@@ -2808,6 +3124,10 @@
           "named": true
         },
         {
+          "type": "postfix_expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -2891,6 +3211,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -2948,14 +3272,6 @@
         "types": [
           {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "member_expression",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
             "named": true
           }
         ]
@@ -3022,6 +3338,10 @@
           },
           {
             "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "postfix_expression",
             "named": true
           },
           {
@@ -3119,6 +3439,10 @@
             "named": true
           },
           {
+            "type": "postfix_expression",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -3187,18 +3511,6 @@
     "named": false
   },
   {
-    "type": "/",
-    "named": false
-  },
-  {
-    "type": "/*",
-    "named": false
-  },
-  {
-    "type": "//",
-    "named": false
-  },
-  {
     "type": "/=",
     "named": false
   },
@@ -3247,10 +3559,6 @@
     "named": false
   },
   {
-    "type": "bool",
-    "named": false
-  },
-  {
     "type": "break",
     "named": false
   },
@@ -3267,6 +3575,10 @@
     "named": false
   },
   {
+    "type": "default",
+    "named": false
+  },
+  {
     "type": "echo",
     "named": false
   },
@@ -3280,10 +3592,6 @@
   },
   {
     "type": "false",
-    "named": false
-  },
-  {
-    "type": "float",
     "named": false
   },
   {
@@ -3311,10 +3619,6 @@
     "named": false
   },
   {
-    "type": "int",
-    "named": false
-  },
-  {
     "type": "is",
     "named": false
   },
@@ -3336,10 +3640,6 @@
   },
   {
     "type": "return",
-    "named": false
-  },
-  {
-    "type": "str",
     "named": false
   },
   {
